@@ -7,10 +7,12 @@
 //
 
 #import "ProgramTableController.h"
+#import "AFNetworking.h"
+
 
 @interface ProgramTableController ()
 
-@property (nonatomic, strong) NSXMLParser *xmlParser;
+@property (nonatomic) NSXMLParser *xmlParser;
 
 @property (nonatomic, strong) NSMutableArray *arrProgramData;
 
@@ -18,7 +20,16 @@
 
 @property (nonatomic, strong) NSMutableString *foundValue;
 
+@property (nonatomic) NSMutableString *xmlRequestString;
+
 @property (nonatomic, strong) NSString *currentElement;
+
+@property (nonatomic, strong) NSMutableDictionary *progamsDict;
+
+@property(nonatomic, strong) NSString *elementName;
+
+@property(nonatomic, strong) NSMutableDictionary *currentDictionary;
+@property(nonatomic, strong) NSMutableString *outstring;
 
 @end
 
@@ -27,12 +38,32 @@
 NSMutableData *_responseData;
 
 -(void) getURLData{
+    NSURL *url=[NSURL URLWithString:@"http://regisscis.net/Regis2/webresources/regis2.program"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    //added AF request start here
+   // AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    AFURLConnectionOperation *operation = [[AFURLConnectionOperation alloc] initWithRequest:request];
+    [request setHTTPMethod:@"GET"];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+
+
+
+/*
+-(void) getURLData{
 NSURL *url=[NSURL URLWithString:@"http://regisscis.net/Regis2/webresources/regis2.program"];
 
 NSMutableURLRequest*request=[NSMutableURLRequest requestWithURL:url];
 [request setHTTPMethod:@"GET"];
 [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
+*/
+
+
+
+//NSXMLParser method
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     //may happend multiple times per request, if multipart
@@ -164,7 +195,6 @@ NSMutableURLRequest*request=[NSMutableURLRequest requestWithURL:url];
     
     return cell;
 }
-
 
 //Below are two unsuccesful methods to retrieve data from web service using NSURL URLWithString... decided to switch methods and try NSURLConnection
 

@@ -11,7 +11,7 @@
 @interface ProgramTableController : UITableViewController<NSURLConnectionDelegate, NSXMLParserDelegate>
 
 @property (strong, nonatomic) NSArray *allPrograms;
-@property (strong, nonatomic) NSString *program;
+@property (strong, nonatomic) NSDictionary *program;
 @property (strong, nonatomic) NSString *programID;
 @property (strong, nonatomic) NSString *dataString;
 @property (strong, nonatomic) NSData *programData;
