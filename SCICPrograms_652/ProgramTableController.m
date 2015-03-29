@@ -8,6 +8,9 @@
 
 #import "ProgramTableController.h"
 #import "AFNetworking.h"
+#import <RestKit/CoreData.h>
+#import <RestKit/RestKit.h>
+#import "Program.h"
 
 
 @interface ProgramTableController ()
@@ -24,7 +27,7 @@
 
 @property (nonatomic, strong) NSString *currentElement;
 
-@property (nonatomic, strong) NSMutableDictionary *progamsDict;
+@property (nonatomic, strong) NSMutableDictionary *programsDict;
 
 @property(nonatomic, strong) NSString *elementName;
 
@@ -36,6 +39,44 @@
 @implementation ProgramTableController
 
 NSMutableData *_responseData;
+
+
+- (void)fetchProgramsFromContext {
+    
+    NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Program class])];
+    
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"Program.name" ascending:YES];
+    fetchRequest.sortDescriptors = @[descriptor];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    NSLog(@"data fetched is: %@", fetchedObjects);
+    
+    [self.tableView reloadData];
+    
+}
+
+/*
+-(NSFetchedResultsController*) fetchedResultsController{
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([_program class])];
+        fetchRequest.sortDescriptors=@[[NSSortDescriptor sortDescriptorWithKey:@"program.name" ascending:YES]];
+        
+        self.fetchedResultsController = [[NSFetchedResultsController alloc]
+                                         initWithFetchRequest:fetchRequest
+                                         managedObjectContext:[RKManagedObjectStore defaultStore].mainQueueManagedObjectContext sectionNameKeyPath:@"program.name" cacheName:@"Program"];
+        
+        self.fetchedResultsController.delegate = self;
+        
+        NSError *error;
+        [self.fetchedResultsController performFetch:&error];
+        NSLog(@"%@", [self.fetchedResultsController fetchedObjects]);
+        NSAssert(!error, @"Error performing fetch request:%@", error);
+    }
+    return fetchedResultsController;
+}
+*/
 
 -(void) getURLData{
     NSURL *url=[NSURL URLWithString:@"http://regisscis.net/Regis2/webresources/regis2.program"];
@@ -156,6 +197,7 @@ NSMutableURLRequest*request=[NSMutableURLRequest requestWithURL:url];
     NSLog (@"view loading");
     NSLog (@"getting URL data");
     [self getURLData];
+    //[self fetchProgramsFromContext];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

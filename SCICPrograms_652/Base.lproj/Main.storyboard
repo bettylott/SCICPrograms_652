@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Evd-Pu-Q3M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NbL-DY-foB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="0Rq-E3-QY8">
-            <objects>
-                <viewController id="IV4-Pt-s39" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZC7-aD-qHF"/>
-                        <viewControllerLayoutGuide type="bottom" id="vES-P6-sM7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Dxn-tH-4Ra">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="p3I-AQ-GlZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0eh-Bg-saq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1548" y="601"/>
-        </scene>
         <!--Program Table Controller-->
         <scene sceneID="haA-vl-Zq3">
             <objects>
@@ -119,6 +100,47 @@
             </objects>
             <point key="canvasLocation" x="-1548" y="-62"/>
         </scene>
+        <!--Coffee Table View Controller-->
+        <scene sceneID="MD5-BC-wOt">
+            <objects>
+                <tableViewController title="Coffee" id="ZN8-ug-EM2" userLabel="Coffee Table View Controller" customClass="CoffeeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9ho-Rs-la7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="yn6-RZ-bHM" detailTextLabel="KoX-Fj-im5" style="IBUITableViewCellStyleValue1" id="liV-6h-NFR">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="liV-6h-NFR" id="IJv-E4-MF7">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yn6-RZ-bHM">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KoX-Fj-im5">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZN8-ug-EM2" id="WBB-Ue-aEy"/>
+                            <outlet property="delegate" destination="ZN8-ug-EM2" id="xQJ-kv-1RV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Coffee" id="cQ9-ZQ-FTG" userLabel="Coffee"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKr-zG-bci" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-729" y="619"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="i5j-Bb-ztc">
             <objects>
@@ -131,8 +153,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="MLn-TA-6N6" kind="relationship" relationship="viewControllers" id="11W-aG-UVD"/>
-                        <segue destination="IV4-Pt-s39" kind="relationship" relationship="viewControllers" id="5fH-Zh-BvY"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0Gx-RL-Ori"/>
+                        <segue destination="gDE-au-fRF" kind="relationship" relationship="viewControllers" id="DZD-1G-p6O"/>
+                        <segue destination="Evd-Pu-Q3M" kind="relationship" relationship="viewControllers" id="FeF-FC-2Bm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq6-zB-N7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,6 +200,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dC1-OK-xsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1548" y="1335"/>
+        </scene>
+        <!--Coffee-->
+        <scene sceneID="ZnU-Mh-Dnk">
+            <objects>
+                <navigationController title="Coffee" automaticallyAdjustsScrollViewInsets="NO" id="gDE-au-fRF" userLabel="Coffee" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Coffee" id="DDo-pA-V0m" userLabel="Coffee"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bUk-mS-wwW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZN8-ug-EM2" kind="relationship" relationship="rootViewController" id="Oru-iV-hgp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbZ-au-Z6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1541" y="619"/>
         </scene>
     </scenes>
 </document>

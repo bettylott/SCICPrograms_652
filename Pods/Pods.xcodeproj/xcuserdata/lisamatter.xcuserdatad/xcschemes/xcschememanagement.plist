@@ -9,6 +9,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RestKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SOCKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TransitionKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2A8CA4CC5B0AF4DE01E8FB64</key>
+		<key>574904D8A6C0DBD37577B2B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B82AA82688E16C9CEC641755</key>
+		<key>5E743DF3A5C67435597CB9D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>647A142E863D3E47B9F851FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96D138CB1F1EC608DAAE1A89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBC8409AF0665E7A0F66ABFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

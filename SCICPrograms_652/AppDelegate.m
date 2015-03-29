@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "Program.h"
+#import <RestKit/CoreData.h>
+#import <RestKit/RestKit.h>
+
+
+
 
 @interface AppDelegate ()
 
@@ -17,9 +23,35 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //[self initializeRestKit];
     return YES;
 }
-
+/*
+-(void) initializeRestKit{
+    //initialize the object manager
+    RKObjectManager *manager = [RKObjectManager
+                                managerWithBaseURL: [NSURL URLWithString:@"http://regisscis.net/Regis2/webresources/regis2.program"]];
+    NSManagedObjectModel *managedObjectModel=[NSManagedObjectModel mergedModelFromBundles:nil];
+    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc]initWithManagedObjectModel:managedObjectModel];
+    manager.managedObjectStore=managedObjectStore ;
+    
+    //create a map for the program class
+    RKEntityMapping *programMapping =
+    [RKEntityMapping mappingForEntityForName:NSStringFromClass([Program class]) inManagedObjectStore:manager.managedObjectStore];
+    programMapping.identificationAttributes =@[@"id"];
+    [programMapping addAttributeMappingsFromDictionary:@{@"name":@"name"}];
+    
+    //create the persistent store
+    [managedObjectStore createPersistentStoreCoordinator];
+    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"SCIS.sqlite"];
+    NSError *error;
+    NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:storePath fromSeedDatabaseAtPath:nil withConfiguration:nil options:@{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES} error:&error];
+    NSAssert(persistentStore, @"Failed persistent store: %@", error);
+    [managedObjectStore createManagedObjectContexts];
+    
+    managedObjectStore.managedObjectCache=[[RKInMemoryManagedObjectCache alloc] initWithManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
+}
+*/
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
