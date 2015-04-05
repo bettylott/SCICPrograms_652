@@ -54,8 +54,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="saq-3e-5n0" id="2Xa-Sg-lgW"/>
-                            <outlet property="delegate" destination="saq-3e-5n0" id="f58-fA-fgg"/>
+                            <outlet property="dataSource" destination="saq-3e-5n0" id="i6u-K0-rzf"/>
+                            <outlet property="delegate" destination="saq-3e-5n0" id="oBz-9Z-qnF"/>
                         </connections>
                     </tableView>
                 </tableViewController>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="633" y="1335"/>
         </scene>
-        <!--Item 1-->
+        <!--Social-->
         <scene sceneID="G8k-bw-drw">
             <objects>
-                <viewController id="MLn-TA-6N6" sceneMemberID="viewController">
+                <viewController title="Social" id="MLn-TA-6N6" userLabel="Social" customClass="SocialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2wJ-4H-bVL"/>
                         <viewControllerLayoutGuide type="bottom" id="R7b-tL-CM4"/>
@@ -92,13 +92,41 @@
                     <view key="view" contentMode="scaleToFill" id="dbk-Ta-t3N">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-7n-tDZ">
+                                <rect key="frame" x="248" y="148" width="104" height="30"/>
+                                <state key="normal" title="Facebook Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookPost:" destination="MLn-TA-6N6" eventType="touchUpInside" id="1lX-HL-LVj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdK-hw-mnf">
+                                <rect key="frame" x="260" y="267" width="81" height="30"/>
+                                <state key="normal" title="Twitter Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterPost:" destination="MLn-TA-6N6" eventType="touchUpInside" id="gzR-AI-vHi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vdK-hw-mnf" firstAttribute="top" secondItem="AAL-7n-tDZ" secondAttribute="bottom" constant="89" id="5QS-t2-KfP"/>
+                            <constraint firstItem="AAL-7n-tDZ" firstAttribute="top" secondItem="2wJ-4H-bVL" secondAttribute="bottom" constant="128" id="FFx-Rp-6RC"/>
+                            <constraint firstItem="vdK-hw-mnf" firstAttribute="top" secondItem="AAL-7n-tDZ" secondAttribute="bottom" constant="89" id="MFx-d5-3N1"/>
+                            <constraint firstAttribute="centerX" secondItem="AAL-7n-tDZ" secondAttribute="centerX" id="gjo-KZ-TqE"/>
+                            <constraint firstAttribute="centerX" secondItem="vdK-hw-mnf" secondAttribute="centerX" id="vaF-on-2tL"/>
+                            <constraint firstItem="R7b-tL-CM4" firstAttribute="top" secondItem="vdK-hw-mnf" secondAttribute="bottom" constant="254" id="xen-6i-1wu"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Slj-Cz-sh6"/>
+                    <tabBarItem key="tabBarItem" title="Social" id="Slj-Cz-sh6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGh-BK-ZW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1548" y="-62"/>
+            <point key="canvasLocation" x="-1401" y="-67"/>
         </scene>
         <!--Coffee Table View Controller-->
         <scene sceneID="MD5-BC-wOt">

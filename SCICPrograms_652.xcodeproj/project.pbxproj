@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		60BCDD3B51394BBE7F187F8F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F843819EB8B931078FF0DF1 /* libPods.a */; };
+		F80033B61ACAC84C008905E7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80033B51ACAC84C008905E7 /* Social.framework */; };
+		F802CE9A1AD01F4100A376B8 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F802CE991AD01F4100A376B8 /* SocialViewController.m */; };
 		F8CC26431AB2519E00B14615 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CC26421AB2519E00B14615 /* main.m */; };
 		F8CC26461AB2519E00B14615 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CC26451AB2519E00B14615 /* AppDelegate.m */; };
 		F8CC26491AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8CC26471AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld */; };
@@ -102,6 +104,9 @@
 		0F843819EB8B931078FF0DF1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE279F9387BA5276A1CDA9A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C35752967EAD60E09569CA35 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F80033B51ACAC84C008905E7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F802CE981AD01F4100A376B8 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
+		F802CE991AD01F4100A376B8 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		F8CC263D1AB2519E00B14615 /* SCICPrograms_652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCICPrograms_652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CC26411AB2519E00B14615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8CC26421AB2519E00B14615 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -144,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F80033B61ACAC84C008905E7 /* Social.framework in Frameworks */,
 				F8EA42DE1AC7203F001F9B3D /* libPods-RestKit.a in Frameworks */,
 				F8FBC4E41AC3A5A100172B96 /* libxml2.dylib in Frameworks */,
 				F8FBC4E21AC3A57800172B96 /* QuartzCore.framework in Frameworks */,
@@ -178,6 +184,7 @@
 		BEBA888B4260E0359FB815BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F80033B51ACAC84C008905E7 /* Social.framework */,
 				F8FBC4E31AC3A5A100172B96 /* libxml2.dylib */,
 				F8FBC4E11AC3A57800172B96 /* QuartzCore.framework */,
 				F8FBC4DF1AC3A55D00172B96 /* SystemConfiguration.framework */,
@@ -188,6 +195,15 @@
 				0F843819EB8B931078FF0DF1 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F802CE941ACF935200A376B8 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				F802CE981AD01F4100A376B8 /* SocialViewController.h */,
+				F802CE991AD01F4100A376B8 /* SocialViewController.m */,
+			);
+			name = Social;
 			sourceTree = "<group>";
 		};
 		F8CC26341AB2519E00B14615 = {
@@ -214,6 +230,7 @@
 		F8CC263F1AB2519E00B14615 /* SCICPrograms_652 */ = {
 			isa = PBXGroup;
 			children = (
+				F802CE941ACF935200A376B8 /* Social */,
 				F8CC26441AB2519E00B14615 /* AppDelegate.h */,
 				F8CC26451AB2519E00B14615 /* AppDelegate.m */,
 				F8E224AD1AC875FB00A43105 /* SCIS Programs */,
@@ -221,9 +238,6 @@
 				F8CC266F1AB4EC9400B14615 /* Main.storyboard */,
 				F8CC26501AB2519E00B14615 /* Images.xcassets */,
 				F8CC26521AB2519E00B14615 /* LaunchScreen.xib */,
-				F8CC26471AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld */,
-				F8FBC4E51AC4E67500172B96 /* Program.h */,
-				F8FBC4E61AC4E67500172B96 /* Program.m */,
 				F8CC26401AB2519E00B14615 /* Supporting Files */,
 			);
 			path = SCICPrograms_652;
@@ -272,6 +286,9 @@
 		F8E224AD1AC875FB00A43105 /* SCIS Programs */ = {
 			isa = PBXGroup;
 			children = (
+				F8CC26471AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld */,
+				F8FBC4E51AC4E67500172B96 /* Program.h */,
+				F8FBC4E61AC4E67500172B96 /* Program.m */,
 				F8CC266C1AB375AA00B14615 /* CourseTableController.h */,
 				F8CC266D1AB375AA00B14615 /* CourseTableController.m */,
 				F8CC26691AB3759600B14615 /* ProgramTableController.h */,
@@ -484,6 +501,7 @@
 				F8CC264C1AB2519E00B14615 /* CourseDetailViewController.m in Sources */,
 				F8E224B01AC8763900A43105 /* Location.m in Sources */,
 				F8E224A71AC8222300A43105 /* CoffeeTableViewController.m in Sources */,
+				F802CE9A1AD01F4100A376B8 /* SocialViewController.m in Sources */,
 				F8CC26431AB2519E00B14615 /* main.m in Sources */,
 				F8CC266B1AB3759600B14615 /* ProgramTableController.m in Sources */,
 			);

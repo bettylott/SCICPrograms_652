@@ -8,20 +8,21 @@
 
 #import "CourseTableController.h"
 
+
 @interface CourseTableController ()
 
 @end
 
 @implementation CourseTableController
 
+NSArray *courses = nil;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSArray *CISCourses = @[[NSArray arrayWithObjects: @"206 Business Software Applications", @"300 Foundation Information Systems", @"313 Intro to Database Concepts", @"318 Ethics for IT Professional", @"325 Systems Analysis and Design", @"445 Database Management", @"448 IT Project Management", @"458 Business Process Management", @"463 E-Commerce Technology Management", @"480 Mng Tech for Bus Strategies", nil]];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    courses= CISCourses;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,26 +33,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    
+    NSLog(@"Courses Count = %li", courses.count);
+    return courses.count;
 }
 
-/*
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"courseCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    
+    
+    NSString *course = [courses objectAtIndex:[indexPath row]];
+    
+    [cell.textLabel setText: course];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -87,14 +95,14 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
+
 
 @end
