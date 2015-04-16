@@ -11,6 +11,7 @@
 #import <RestKit/CoreData.h>
 #import <RestKit/RestKit.h>
 #import "Program.h"
+#import "CourseTableController.h"
 
 
 @interface ProgramTableController ()
@@ -169,6 +170,7 @@ NSMutableURLRequest*request=[NSMutableURLRequest requestWithURL:url];
     }
     
     self.currentElement = elementName;
+    NSLog (@"Current Element: %@", _currentElement);
 }
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
@@ -186,6 +188,7 @@ NSMutableURLRequest*request=[NSMutableURLRequest requestWithURL:url];
     if([self.currentElement isEqualToString:@"name"]){
         if(![string isEqualToString:@"\n"]){
             [self.foundValue appendString:string];
+            NSLog (@"found Value:%@", self.foundValue);
         }
     }
 }
@@ -347,14 +350,15 @@ NSURLRequest *request = [NSURLRequest requestWithURL:url];
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ if ([segue.identifier isEqualToString:@"showCourses"]) {
+ NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+ CourseTableController *destViewController = segue.destinationViewController;
+ destViewController.programName = [self.arrProgramData objectAtIndex:indexPath.row];
+ }
+ }
 
 @end
