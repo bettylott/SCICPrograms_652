@@ -9,6 +9,8 @@
 #import "CourseTableController.h"
 
 
+
+
 @interface CourseTableController ()
 
 @end
@@ -19,10 +21,47 @@ NSArray *courses = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getCourses];
+   
+}
+
+-(void) getCourses {
     
-    NSArray *CISCourses = @[[NSArray arrayWithObjects: @"206 Business Software Applications", @"300 Foundation Information Systems", @"313 Intro to Database Concepts", @"318 Ethics for IT Professional", @"325 Systems Analysis and Design", @"445 Database Management", @"448 IT Project Management", @"458 Business Process Management", @"463 E-Commerce Technology Management", @"480 Mng Tech for Bus Strategies", nil]];
+    
+    //NSLog (@"name is: %@", );
+    
+   //if ([Program:.name @"name"] isEqualTo @"CIS"]){
+    
+    NSString *CIS206 = @"206 Business Software Applications";
+    
+    NSString *CIS300 = @"300 Foundation Information Systems";
+    
+    NSString *CIS313 = @"313 Intro to Database Concepts";
+    
+    NSString *CIS318 = @"318 Ethics for IT Professional";
+    
+    NSString *CIS325 = @"325 Systems Analysis and Design";
+    
+    NSString *CIS445 = @"445 Database Management";
+    
+    NSString *CIS448 = @"448 IT Project Management";
+    
+    NSString *CIS458 = @"458 Business Process Management";
+    
+    NSString *CIS463 = @"463 E-Commerce Technology Management";
+    
+    NSString *CIS480 = @"480 Mng Tech for Bus Strategies";
+    
+    NSArray *CISCourses = [NSArray arrayWithObjects: CIS206, CIS300, CIS313, CIS318, CIS325, CIS445, CIS448, CIS458, CIS463, CIS480, nil];
     
     courses= CISCourses;
+    
+    NSLog (@"%@", courses);
+    //}
+    
+    //else {
+        //courses = nil;
+    //}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,8 +138,7 @@ NSArray *courses = nil;
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+   
     
 }
 

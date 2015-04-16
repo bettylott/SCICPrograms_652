@@ -11,4 +11,7 @@
 
 @interface CourseTableController : UITableViewController
 
+@property (nonatomic, strong) NSString *programName;
+
+
 @end
