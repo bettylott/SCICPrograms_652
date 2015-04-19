@@ -16,6 +16,8 @@
 		F802CE9A1AD01F4100A376B8 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F802CE991AD01F4100A376B8 /* SocialViewController.m */; };
 		F8B2ED9A1ADF66C100F03A84 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8B2ED931ADF66C100F03A84 /* Info.plist */; };
 		F8B2ED9B1ADF66C100F03A84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2ED941ADF66C100F03A84 /* main.m */; };
+		F8B2EDA01AE1B54900F03A84 /* SocketSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2ED9F1AE1B54900F03A84 /* SocketSvc.m */; };
+		F8B2EDA31AE3444300F03A84 /* JoinChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2EDA21AE3444300F03A84 /* JoinChatViewController.m */; };
 		F8CC26461AB2519E00B14615 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CC26451AB2519E00B14615 /* AppDelegate.m */; };
 		F8CC26491AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8CC26471AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld */; };
 		F8CC264C1AB2519E00B14615 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CC264B1AB2519E00B14615 /* CourseDetailViewController.m */; };
@@ -122,6 +124,10 @@
 		F8B2ED931ADF66C100F03A84 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B2ED941ADF66C100F03A84 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8B2ED951ADF66C100F03A84 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F8B2ED9E1AE1B54900F03A84 /* SocketSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketSvc.h; sourceTree = "<group>"; };
+		F8B2ED9F1AE1B54900F03A84 /* SocketSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketSvc.m; sourceTree = "<group>"; };
+		F8B2EDA11AE3444300F03A84 /* JoinChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinChatViewController.h; sourceTree = "<group>"; };
+		F8B2EDA21AE3444300F03A84 /* JoinChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinChatViewController.m; sourceTree = "<group>"; };
 		F8CC263D1AB2519E00B14615 /* SCICPrograms_652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCICPrograms_652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CC26441AB2519E00B14615 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8CC26451AB2519E00B14615 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -218,6 +224,8 @@
 			children = (
 				F802CE981AD01F4100A376B8 /* SocialViewController.h */,
 				F802CE991AD01F4100A376B8 /* SocialViewController.m */,
+				F8B2EDA11AE3444300F03A84 /* JoinChatViewController.h */,
+				F8B2EDA21AE3444300F03A84 /* JoinChatViewController.m */,
 			);
 			name = Social;
 			sourceTree = "<group>";
@@ -230,6 +238,15 @@
 				F8B2ED951ADF66C100F03A84 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8B2ED9D1AE1B4E200F03A84 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				F8B2ED9E1AE1B54900F03A84 /* SocketSvc.h */,
+				F8B2ED9F1AE1B54900F03A84 /* SocketSvc.m */,
+			);
+			name = Socket;
 			sourceTree = "<group>";
 		};
 		F8CC26341AB2519E00B14615 = {
@@ -256,6 +273,7 @@
 		F8CC263F1AB2519E00B14615 /* SCICPrograms_652 */ = {
 			isa = PBXGroup;
 			children = (
+				F8B2ED9D1AE1B4E200F03A84 /* Socket */,
 				F8001D151ADCBBA500C0FC64 /* SCICPrograms_652.entitlements */,
 				F8CC26441AB2519E00B14615 /* AppDelegate.h */,
 				F8CC26451AB2519E00B14615 /* AppDelegate.m */,
@@ -530,12 +548,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8CC26461AB2519E00B14615 /* AppDelegate.m in Sources */,
+				F8B2EDA31AE3444300F03A84 /* JoinChatViewController.m in Sources */,
 				F8CC266E1AB375AA00B14615 /* CourseTableController.m in Sources */,
 				F8FBC4E71AC4E67500172B96 /* Program.m in Sources */,
 				F8E224AA1AC8264000A43105 /* Venue.m in Sources */,
 				F8CC26491AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld in Sources */,
 				F8CC264C1AB2519E00B14615 /* CourseDetailViewController.m in Sources */,
 				F8E224B01AC8763900A43105 /* Location.m in Sources */,
+				F8B2EDA01AE1B54900F03A84 /* SocketSvc.m in Sources */,
 				F8001D201ADE10CD00C0FC64 /* AddNoteTableViewController.m in Sources */,
 				F8B2ED9B1ADF66C100F03A84 /* main.m in Sources */,
 				F8E224A71AC8222300A43105 /* CoffeeTableViewController.m in Sources */,

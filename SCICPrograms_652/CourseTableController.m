@@ -28,9 +28,9 @@ NSArray *courses = nil;
 -(void) getCourses {
     
     
-    //NSLog (@"name is: %@", );
+    NSLog (@"name is: %@", self.program);
     
-   //if ([Program:.name @"name"] isEqualTo @"CIS"]){
+   //if ([self.program  isEqual: @"CIS"]){
     
     NSString *CIS206 = @"206 Business Software Applications";
     

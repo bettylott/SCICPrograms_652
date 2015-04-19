@@ -35,6 +35,8 @@
 @property(nonatomic, strong) NSMutableDictionary *currentDictionary;
 @property(nonatomic, strong) NSMutableString *outstring;
 
+@property (nonatomic, strong)NSString *cellText;
+
 @end
 
 @implementation ProgramTableController
@@ -236,6 +238,8 @@ NSMutableURLRequest*request=[NSMutableURLRequest requestWithURL:url];
     }
     cell.textLabel.text = [[self.arrProgramData objectAtIndex:indexPath.row] objectForKey:@"name"];
     
+    self.cellText = cell.textLabel.text;
+    
     //[NSString stringWithFormat:@"%@", [_allPrograms valueForKey:_program]]];
     
     return cell;
@@ -355,10 +359,9 @@ NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  if ([segue.identifier isEqualToString:@"showCourses"]) {
- NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
  CourseTableController *destViewController = segue.destinationViewController;
- destViewController.programName = [self.arrProgramData objectAtIndex:indexPath.row];
- }
- }
+     destViewController.program = self.cellText;
+     NSLog (@"Text from cell %@", _cellText);
+ }}
 
 @end
