@@ -18,9 +18,14 @@
 		F8B2ED9B1ADF66C100F03A84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2ED941ADF66C100F03A84 /* main.m */; };
 		F8B2EDA01AE1B54900F03A84 /* SocketSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2ED9F1AE1B54900F03A84 /* SocketSvc.m */; };
 		F8B2EDA31AE3444300F03A84 /* JoinChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2EDA21AE3444300F03A84 /* JoinChatViewController.m */; };
+		F8B2EDAA1AE67E9000F03A84 /* SocketRocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2EDA91AE67E9000F03A84 /* SocketRocketViewController.m */; };
+		F8B2EDBC1AE9EEC800F03A84 /* Book Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B2EDB81AE9EEC800F03A84 /* Book Icon.png */; };
+		F8B2EDBD1AE9EEC800F03A84 /* coffee icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B2EDB91AE9EEC800F03A84 /* coffee icon.png */; };
+		F8B2EDBE1AE9EEC800F03A84 /* Icloud icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B2EDBA1AE9EEC800F03A84 /* Icloud icon.png */; };
+		F8B2EDBF1AE9EEC800F03A84 /* social icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8B2EDBB1AE9EEC800F03A84 /* social icon.jpg */; };
+		F8B2EDC91AEB303800F03A84 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B2EDC81AEB303800F03A84 /* DetailsViewController.m */; };
 		F8CC26461AB2519E00B14615 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CC26451AB2519E00B14615 /* AppDelegate.m */; };
 		F8CC26491AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8CC26471AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld */; };
-		F8CC264C1AB2519E00B14615 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CC264B1AB2519E00B14615 /* CourseDetailViewController.m */; };
 		F8CC26511AB2519E00B14615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8CC26501AB2519E00B14615 /* Images.xcassets */; };
 		F8CC26541AB2519E00B14615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8CC26521AB2519E00B14615 /* LaunchScreen.xib */; };
 		F8CC26601AB2519E00B14615 /* SCICPrograms_652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CC265F1AB2519E00B14615 /* SCICPrograms_652Tests.m */; };
@@ -42,6 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F8B2EDAE1AE67E9100F03A84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8EA42C61AC71F18001F9B3D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C4FBDC32E929277D05ABAB61;
+			remoteInfo = "Pods-SocketRocket";
+		};
 		F8CC265A1AB2519E00B14615 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F8CC26351AB2519E00B14615 /* Project object */;
@@ -88,21 +100,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = F8EA42C61AC71F18001F9B3D /* Pods.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = EBC8409AF0665E7A0F66ABFB;
+			remoteGlobalIDString = 6691847811CCA52E460E3ECB;
 			remoteInfo = "Pods-RestKit";
 		};
 		F8EA42DA1AC7200C001F9B3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F8EA42C61AC71F18001F9B3D /* Pods.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 96D138CB1F1EC608DAAE1A89;
+			remoteGlobalIDString = 39D30CDC14C3C30B5CE838CC;
 			remoteInfo = "Pods-AFNetworking";
 		};
 		F8EA42DC1AC72012001F9B3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F8EA42C61AC71F18001F9B3D /* Pods.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 647A142E863D3E47B9F851FC;
+			remoteGlobalIDString = BCEDEE48B9F629AAF7C96899;
 			remoteInfo = "Pods-SOCKit";
 		};
 /* End PBXContainerItemProxy section */
@@ -128,12 +140,18 @@
 		F8B2ED9F1AE1B54900F03A84 /* SocketSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketSvc.m; sourceTree = "<group>"; };
 		F8B2EDA11AE3444300F03A84 /* JoinChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinChatViewController.h; sourceTree = "<group>"; };
 		F8B2EDA21AE3444300F03A84 /* JoinChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinChatViewController.m; sourceTree = "<group>"; };
+		F8B2EDA81AE67E9000F03A84 /* SocketRocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocketViewController.h; sourceTree = "<group>"; };
+		F8B2EDA91AE67E9000F03A84 /* SocketRocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRocketViewController.m; sourceTree = "<group>"; };
+		F8B2EDB81AE9EEC800F03A84 /* Book Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Book Icon.png"; path = "../../Book Icon.png"; sourceTree = "<group>"; };
+		F8B2EDB91AE9EEC800F03A84 /* coffee icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coffee icon.png"; path = "../../coffee icon.png"; sourceTree = "<group>"; };
+		F8B2EDBA1AE9EEC800F03A84 /* Icloud icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icloud icon.png"; path = "../../Icloud icon.png"; sourceTree = "<group>"; };
+		F8B2EDBB1AE9EEC800F03A84 /* social icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "social icon.jpg"; path = "../../social icon.jpg"; sourceTree = "<group>"; };
+		F8B2EDC71AEB303800F03A84 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		F8B2EDC81AEB303800F03A84 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		F8CC263D1AB2519E00B14615 /* SCICPrograms_652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCICPrograms_652.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CC26441AB2519E00B14615 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8CC26451AB2519E00B14615 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F8CC26481AB2519E00B14615 /* SCICPrograms_652.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCICPrograms_652.xcdatamodel; sourceTree = "<group>"; };
-		F8CC264A1AB2519E00B14615 /* CourseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
-		F8CC264B1AB2519E00B14615 /* CourseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
 		F8CC26501AB2519E00B14615 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F8CC26531AB2519E00B14615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F8CC26591AB2519E00B14615 /* SCICPrograms_652Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCICPrograms_652Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +244,8 @@
 				F802CE991AD01F4100A376B8 /* SocialViewController.m */,
 				F8B2EDA11AE3444300F03A84 /* JoinChatViewController.h */,
 				F8B2EDA21AE3444300F03A84 /* JoinChatViewController.m */,
+				F8B2EDA81AE67E9000F03A84 /* SocketRocketViewController.h */,
+				F8B2EDA91AE67E9000F03A84 /* SocketRocketViewController.m */,
 			);
 			name = Social;
 			sourceTree = "<group>";
@@ -247,6 +267,16 @@
 				F8B2ED9F1AE1B54900F03A84 /* SocketSvc.m */,
 			);
 			name = Socket;
+			sourceTree = "<group>";
+		};
+		F8B2EDB01AE89BC900F03A84 /* SCIS Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8CC26471AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld */,
+				F8FBC4E61AC4E67500172B96 /* Program.m */,
+				F8FBC4E51AC4E67500172B96 /* Program.h */,
+			);
+			name = "SCIS Model";
 			sourceTree = "<group>";
 		};
 		F8CC26341AB2519E00B14615 = {
@@ -277,6 +307,10 @@
 				F8001D151ADCBBA500C0FC64 /* SCICPrograms_652.entitlements */,
 				F8CC26441AB2519E00B14615 /* AppDelegate.h */,
 				F8CC26451AB2519E00B14615 /* AppDelegate.m */,
+				F8B2EDB81AE9EEC800F03A84 /* Book Icon.png */,
+				F8B2EDB91AE9EEC800F03A84 /* coffee icon.png */,
+				F8B2EDBA1AE9EEC800F03A84 /* Icloud icon.png */,
+				F8B2EDBB1AE9EEC800F03A84 /* social icon.jpg */,
 				F8DADE201AD77192002A4930 /* I Cloud */,
 				F802CE941ACF935200A376B8 /* Social */,
 				F8E224AD1AC875FB00A43105 /* SCIS Programs */,
@@ -333,15 +367,13 @@
 		F8E224AD1AC875FB00A43105 /* SCIS Programs */ = {
 			isa = PBXGroup;
 			children = (
-				F8CC26471AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld */,
-				F8FBC4E51AC4E67500172B96 /* Program.h */,
-				F8FBC4E61AC4E67500172B96 /* Program.m */,
+				F8B2EDB01AE89BC900F03A84 /* SCIS Model */,
 				F8CC266C1AB375AA00B14615 /* CourseTableController.h */,
 				F8CC266D1AB375AA00B14615 /* CourseTableController.m */,
 				F8CC26691AB3759600B14615 /* ProgramTableController.h */,
 				F8CC266A1AB3759600B14615 /* ProgramTableController.m */,
-				F8CC264A1AB2519E00B14615 /* CourseDetailViewController.h */,
-				F8CC264B1AB2519E00B14615 /* CourseDetailViewController.m */,
+				F8B2EDC71AEB303800F03A84 /* DetailsViewController.h */,
+				F8B2EDC81AEB303800F03A84 /* DetailsViewController.m */,
 			);
 			name = "SCIS Programs";
 			sourceTree = "<group>";
@@ -353,6 +385,7 @@
 				F8EA42D11AC71F18001F9B3D /* libPods-AFNetworking.a */,
 				F8EA42D31AC71F18001F9B3D /* libPods-RestKit.a */,
 				F8EA42D51AC71F18001F9B3D /* libPods-SOCKit.a */,
+				F8B2EDAF1AE67E9100F03A84 /* libPods-SocketRocket.a */,
 				F8EA42D71AC71F18001F9B3D /* libPods-TransitionKit.a */,
 			);
 			name = Products;
@@ -451,6 +484,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		F8B2EDAF1AE67E9100F03A84 /* libPods-SocketRocket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-SocketRocket.a";
+			remoteRef = F8B2EDAE1AE67E9100F03A84 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		F8EA42CF1AC71F18001F9B3D /* libPods.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -494,7 +534,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B2ED9A1ADF66C100F03A84 /* Info.plist in Resources */,
+				F8B2EDBD1AE9EEC800F03A84 /* coffee icon.png in Resources */,
+				F8B2EDBF1AE9EEC800F03A84 /* social icon.jpg in Resources */,
+				F8B2EDBC1AE9EEC800F03A84 /* Book Icon.png in Resources */,
 				F8CC26711AB4EC9400B14615 /* Main.storyboard in Resources */,
+				F8B2EDBE1AE9EEC800F03A84 /* Icloud icon.png in Resources */,
 				F8CC26541AB2519E00B14615 /* LaunchScreen.xib in Resources */,
 				F8CC26511AB2519E00B14615 /* Images.xcassets in Resources */,
 			);
@@ -553,7 +597,8 @@
 				F8FBC4E71AC4E67500172B96 /* Program.m in Sources */,
 				F8E224AA1AC8264000A43105 /* Venue.m in Sources */,
 				F8CC26491AB2519E00B14615 /* SCICPrograms_652.xcdatamodeld in Sources */,
-				F8CC264C1AB2519E00B14615 /* CourseDetailViewController.m in Sources */,
+				F8B2EDAA1AE67E9000F03A84 /* SocketRocketViewController.m in Sources */,
+				F8B2EDC91AEB303800F03A84 /* DetailsViewController.m in Sources */,
 				F8E224B01AC8763900A43105 /* Location.m in Sources */,
 				F8B2EDA01AE1B54900F03A84 /* SocketSvc.m in Sources */,
 				F8001D201ADE10CD00C0FC64 /* AddNoteTableViewController.m in Sources */,

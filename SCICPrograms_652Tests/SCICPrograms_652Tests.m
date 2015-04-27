@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+
+
+
+
+
 @interface SCICPrograms_652Tests : XCTestCase
 
 @end
@@ -27,8 +32,40 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    {
+        NSArray *notes = [[NSArray alloc]init];
+        if (notes) {
+        }
+        
+        notes = [[[NSUbiquitousKeyValueStore defaultStore] arrayForKey:@"AVAILABLE_NOTES"] mutableCopy];
+        if (!notes) notes = [NSMutableArray array];
+        
+        NSLog (@"notes = %@", notes);
+    }
+
 }
+
+- (void)testWebSocket {
+    CFReadStreamRef readStream;
+    CFWriteStreamRef writeStream;
+    CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)@"localhost", 80, &readStream, &writeStream);
+    NSInputStream *inputStream = [[NSInputStream alloc] init];
+    NSOutputStream *outputStream = [[NSOutputStream alloc] init];
+    inputStream = (__bridge NSInputStream *)readStream;
+    outputStream = (__bridge NSOutputStream*)writeStream;
+    
+    [inputStream setDelegate:self];
+    [outputStream setDelegate:self];
+    
+    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    [inputStream open];
+    [outputStream open];
+
+}
+
+
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

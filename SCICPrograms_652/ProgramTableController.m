@@ -37,6 +37,9 @@
 
 @property (nonatomic, strong)NSString *cellText;
 
+@property (nonatomic, strong) NSString *programName;
+
+
 @end
 
 @implementation ProgramTableController
@@ -245,6 +248,16 @@ NSMutableURLRequest*request=[NSMutableURLRequest requestWithURL:url];
     return cell;
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *cellText = selectedCell.textLabel.text;
+    self.programName = cellText;
+    NSLog(@"selected cell text = %@", cellText);
+    
+    [self performSegueWithIdentifier:@"showCourses" sender:self];
+}
+
 //Below are two unsuccesful methods to retrieve data from web service using NSURL URLWithString... decided to switch methods and try NSURLConnection
 
 /*
@@ -356,12 +369,24 @@ NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
 
 #pragma mark - Navigation
-
+/*
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  if ([segue.identifier isEqualToString:@"showCourses"]) {
  CourseTableController *destViewController = segue.destinationViewController;
-     destViewController.program = self.cellText;
-     NSLog (@"Text from cell %@", _cellText);
+     destViewController.selectedProgramName = self.programName;
+     NSLog (@"Text sent for cell %@", _programName);
+    
  }}
+*/
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showCourses"]) {
+        NSLog(@"programName before segue: %@", self.programName);
+        
+        CourseTableController *dvc = (CourseTableController*)segue.destinationViewController;
+        dvc.selectedProgramName = self.programName;    }
+}
+
 
 @end
